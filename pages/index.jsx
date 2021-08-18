@@ -1,68 +1,66 @@
-import Head from 'next/head'
+import { useEffect } from 'react';
+import Head from "next/head";
+import Image from "next/image";
+import logo from "../public/tld-logo-hz-black-outline.png";
+import styles from '../styles/styles.module.scss';
 
 export default function Home() {
+  console.log(styles)
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widget.bandsintown.com/main.min.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, [])
+
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>The Lewd Dudes</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+      <main className={styles.mainBackground}>
+        <h1 className={styles.primaryHeader}>Live Love Lewd <span>Tour</span></h1>
+        <div>
+          <a className={'bit-widget-initializer'}
+            data-artist-name="The Lewd Dudes"
+            data-display-local-dates="false"
+            data-display-past-dates="true"
+            data-auto-style="false"
+            data-text-color="#FFFFFF"
+            data-link-color="#ffabf5"
+            data-background-color="rgba(0,0,0,0.5)"
+            data-display-limit="15"
+            data-link-text-color="#FFFFFF"
+            data-display-lineup="true"
+            data-display-play-my-city="true"
+            data-separator-color="rgba(124,124,124,0.25)"
+            data-display-start-time="false">
           </a>
         </div>
+
       </main>
 
       <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
+        <a href="https://thelewddudes.com" target="_blank">
+          Powered by{" "}
+          <Image
+            src={logo}
+            alt="The Lewd Dudes Logo 2021"
+            width={100}
+            height={100}
+          // blurDataURL="data:..." automatically provided
+          // Optionally allows to add a blurred version of the image while loading
+          // placeholder="blur"
+          />
         </a>
       </footer>
 
       <style jsx>{`
         .container {
           min-height: 100vh;
-          padding: 0 0.5rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -70,7 +68,6 @@ export default function Home() {
         }
 
         main {
-          padding: 5rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
@@ -205,5 +202,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
