@@ -18,6 +18,7 @@ export default function Home() {
       <Head>
         <title>The Lewd Dudes</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="/tld-at-the-pool.jpg" />
       </Head>
 
       <main className={styles.mainBackground}>
