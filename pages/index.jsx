@@ -5,7 +5,6 @@ import logo from "../public/tld-logo-hz-black-outline.png";
 import styles from '../styles/styles.module.scss';
 
 export default function Home() {
-  console.log(styles)
 
   useEffect(() => {
     const script = document.createElement("script");
