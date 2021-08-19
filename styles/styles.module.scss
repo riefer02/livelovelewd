@@ -40,6 +40,10 @@
 
   span {
     color: #ffabf5;
-    text-shadow: 0 0 10px black;
+    text-shadow: 0 0 2px black;
+
+    @media screen and (min-width: 980px) {
+      text-shadow: 0 0 10px black;
+    }
   }
 }
